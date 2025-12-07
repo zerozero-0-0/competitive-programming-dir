@@ -11,4 +11,8 @@ constexpr long long linf = LONG_LONG_MAX;
 int main() {
   ios::sync_with_stdio(false);
   cin.tie(nullptr);
+
+  int n;
+  cin >> n;
+  cout << n * (n + 1) / 2 << "\n";
 }
