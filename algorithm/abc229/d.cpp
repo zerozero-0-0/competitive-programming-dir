@@ -13,6 +13,21 @@ int main() {
   string s;
   int k;
   cin >> s >> k;
+  const int n = s.size();
 
-  
+  int r = 0;
+  int ans = 0;
+  int cnt = 0; 
+  rep(l, n) {
+    while (r < n && (s[r] == 'X' || cnt < k)) {
+      if (s[r] == '.') ++cnt;
+      ++r;
+    }
+    
+    ans = max(ans, r - l);
+    
+    if (s[l] == '.') --cnt;
+  }
+
+  cout << ans << "\n";
 }
